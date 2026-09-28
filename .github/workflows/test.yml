@@ -1,23 +1,33 @@
 name: Teste Versao
 
 on:
-  workflow_dispatch:
-  workflow_call:
-    inputs:
-        sei-version:
-            required: true
-            type: string
+  workflow_run:
+    workflows: ["Pre Teste Versao"]
+    types:
+      - completed
 
 jobs:
 
   test:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
+
+      - name: Get SEI-version parameter
+        uses: actions/download-artifact@v4
+        with:
+          name: myparameter
+          path: ./sei-version.parameter
+
+      - name: Read SEI-version parameter
+        run: |
+          SEI_VERSION=$(cat ./sei-version.parameter)
+
       - name: Checkout Me
         uses: actions/checkout@v7
         with:
             path: sei-loadtests
-            ref: feat/marlinhares-sei5
 
       - name: Fetch SEI
         uses: actions/checkout@v7
@@ -25,7 +35,7 @@ jobs:
           repository: pengovbr/sei
           token: ${{ secrets.GH_PAT }}
           path: sei-loadtests/tests/assets/repos/sei-fontes
-          ref: ${{ inputs.sei-version }}
+          ref: 4.0.12.15
 
       - name: Fetch sei-docker
         uses: actions/checkout@v7
@@ -36,4 +46,10 @@ jobs:
       - name: RunTests
         run: |
           cd sei-loadtests/tests
-          make test
+          ls
+
+      # - name: Archive test artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: test-results
+      #     path: sei-loadtests/tests/assets/test-results/result-testes.jtl
