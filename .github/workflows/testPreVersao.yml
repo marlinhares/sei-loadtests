@@ -1,24 +1,26 @@
 name: Pre Teste Versao
 
 on:
+
   workflow_dispatch:
     inputs:
-        sei-version:
-          required: true
-          type: string
-        db:
-          required: true
-          type: string
-          default: mysql
+      sei-version:
+        required: true
+        type: string
+      db:
+        required: true
+        type: string
+        default: mysql
+
   workflow_call:
     inputs:
-        sei-version:
-            required: true
-            type: string
-        db:
-            required: true
-            type: string
-            default: mysql
+      sei-version:
+        required: true
+        type: string
+      db:
+        required: true
+        type: string
+        default: mysql
 
 jobs:
 
@@ -49,10 +51,10 @@ jobs:
       - name: RunPreTests
         run: |
           cd sei-loadtests/tests
-          ls
+          make DB=${{ inputs.db }} pretest
 
-      # - name: Archive pretest artifacts
-      #   uses: actions/upload-artifact@v7
-      #   with:
-      #     name: pre-test-results
-      #     path: sei-loadtests/tests/assets/test-results/result-pretestes.jtl
+      - name: Archive pretest artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: pre-test-results
+          path: sei-loadtests/tests/assets/test-results/result-pretestes.jtl
