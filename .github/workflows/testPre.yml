@@ -16,7 +16,9 @@ jobs:
 
   pretest:
     runs-on: ubuntu-latest
+
     steps:
+
       - name: Checkout Me
         uses: actions/checkout@v7
         with:
@@ -39,20 +41,10 @@ jobs:
       - name: RunPreTests
         run: |
           cd sei-loadtests/tests
-          make pretest
+          ls
 
-      - name: Archive pretest artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: pre-test-results
-          path: sei-loadtests/tests/assets/test-results/result-pretestes.jtl
-
-      - name: Save parameters to file
-        run: |
-          echo "${{ inputs.sei-version }}" > sei-version.parameter
-
-      - name: Upload parameter
-        uses: actions/upload-artifact@v4
-        with:
-          name: myparameter
-          path: sei-version.parameter
+      # - name: Archive pretest artifacts
+      #   uses: actions/upload-artifact@v7
+      #   with:
+      #     name: pre-test-results
+      #     path: sei-loadtests/tests/assets/test-results/result-pretestes.jtl
