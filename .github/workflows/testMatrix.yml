@@ -1,26 +1,15 @@
-name: Matrix Run
+name: Main CI pipeline
 
 on:
   workflow_dispatch:
-    inputs:
-        sei-version:
-            required: true
-            type: string
-  workflow_call:
-    inputs:
-        sei-version:
-            required: true
-            type: string
 
 jobs:
-
-  temp:
-    runs-on: ubuntu-latest
+  trigger-reusable-matrix:
     strategy:
       matrix:
-        sei-version: [4.0.9, 4.1.5]
+        sei-version: ["4.1.5"]
 
-    uses: ./.github/workflows/badges/testPreVersao.yml
-    secrets: inherit
+    # Call the reusable workflow
+    uses: ./.github/workflows/test415.yml
     with:
       sei-version: ${{ matrix.sei-version }}
