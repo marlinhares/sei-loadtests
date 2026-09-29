@@ -1,4 +1,4 @@
-name: Pre Teste Versao
+name: Matrix Run
 
 on:
   workflow_dispatch:
