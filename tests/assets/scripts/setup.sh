@@ -34,7 +34,10 @@ if [ "${v:0:1}" = "5" ]; then
 fi
 
 echo "export LOCALIZACAO_FONTES_SEI=${SEI_FONTES_LOCATION}" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
+echo "" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 cat ${ENVS_DIR}/envcomplemento.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
+
+cat ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 
 make -C ${SEI_DOCKER_LOCATION_INFRA} setup
 
