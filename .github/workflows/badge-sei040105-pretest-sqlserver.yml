@@ -1,6 +1,5 @@
-name: badge-sei040105-pretest-mysql
+name: badge-sei040105-pretest-sqlserver
 on:
-  push:
   workflow_dispatch:
 
 jobs:
@@ -9,4 +8,4 @@ jobs:
     secrets: inherit
     with:
       sei-version: 4.1.5
-      db: mysql
+      db: sqlserver
