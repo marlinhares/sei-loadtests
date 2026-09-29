@@ -33,6 +33,7 @@ if [ "${v:0:1}" = "5" ]; then
     cat ${SEI_DOCKER_LOCATION_INFRA}/envlocal-example-${DB}-sei5.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 fi
 
+echo "" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 echo "export LOCALIZACAO_FONTES_SEI=${SEI_FONTES_LOCATION}" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 echo "" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 cat ${ENVS_DIR}/envcomplemento.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
