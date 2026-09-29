@@ -1,0 +1,11 @@
+name: badge-sei040105-postgres
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    uses: ./.github/workflows/testPreVersao.yml
+    secrets: inherit
+    with:
+      sei-version: 4.1.5
+      db: postgres
