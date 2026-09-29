@@ -1,4 +1,4 @@
-name: badge-sei040105-mysql
+name: badge-sei040105-pretest-mysql
 on:
   workflow_dispatch:
 

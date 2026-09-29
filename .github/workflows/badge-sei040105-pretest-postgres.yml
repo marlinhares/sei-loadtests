@@ -1,4 +1,4 @@
-name: badge-sei040105-postgres
+name: badge-sei040105-pretest-postgres
 on:
   workflow_dispatch:
 
