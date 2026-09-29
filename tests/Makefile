@@ -10,7 +10,6 @@ SEI_DOCKER_LOCATION_INFRA ?= $(SEI_DOCKER_LOCATION)/infra
 
 SEI_FONTES_REPO ?= https://github.com/pengovbr/sei
 SEI_FONTES_LOCATION ?= $(MAKEFILE_DIR)assets/repos/sei-fontes
-SEI_FONTES_CHECKOUT_VERSION ?= "4.0.12.15"
 
 DB ?= "mysql"
 
@@ -45,8 +44,8 @@ sei-destroy:
 
 sei-setup:
 	@make sei-destroy
-	@echo "Vamos subir o sei usando o sei-docker/infra em $(SEI_DOCKER_LOCATION)infra"
-	$(SCRIPTS_DIR)/setup.sh $(DB) $(SEI_DOCKER_LOCATION_INFRA) $(SEI_FONTES_LOCATION) $(ENVS_DIR) $(SEI_FONTES_CHECKOUT_VERSION)
+	@echo "Vamos subir o sei usando o sei-docker/infra em $(SEI_DOCKER_LOCATION_INFRA)"
+	$(SCRIPTS_DIR)/setup.sh $(DB) $(SEI_DOCKER_LOCATION_INFRA) $(SEI_FONTES_LOCATION) $(ENVS_DIR)
 
 jmeter-preload:
 	@echo "Running jmeter tests..."
