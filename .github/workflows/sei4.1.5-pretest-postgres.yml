@@ -1,5 +1,7 @@
-name: badge-sei040105-pretest-postgres
+name: sei4.1.5-pretest-postgres
+
 on:
+  push:
   workflow_dispatch:
 
 jobs:

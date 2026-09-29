@@ -1,5 +1,7 @@
-name: badge-sei040105-pretest-sqlserver
+name: sei4.1.5-pretest-sqlserver
+
 on:
+  push:
   workflow_dispatch:
 
 jobs:
