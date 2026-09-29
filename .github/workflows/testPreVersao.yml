@@ -51,7 +51,7 @@ jobs:
       - name: RunPreTests
         run: |
           cd sei-loadtests/tests
-          make DB=${{ inputs.db }}  pretest
+          make DB=${{ inputs.db }} pretest
 
       - name: Archive pretest artifacts
         uses: actions/upload-artifact@v7

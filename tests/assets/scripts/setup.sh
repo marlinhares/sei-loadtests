@@ -10,9 +10,15 @@ SEI_DOCKER_LOCATION_INFRA=$2
 SEI_FONTES_LOCATION=$3
 ENVS_DIR=$4
 
+ls -lh ${SEI_FONTES_LOCATION}
+
+echo "${SEI_FONTES_LOCATION}"
+
 if [ -d "${SEI_FONTES_LOCATION}/src" ]; then
     SEI_FONTES_LOCATION=${SEI_FONTES_LOCATION}/src
 fi
+
+echo "${SEI_FONTES_LOCATION}"
 
 v=$(grep -e "define('SEI_VERSAO'" -e "const SEI_VERSAO" ${SEI_FONTES_LOCATION}/sei/web/SEI.php)
 v=$(echo ${v} | grep -e "define('SEI_VERSAO'" -e "const SEI_VERSAO" | grep -e "'4\\..*\\..*'" -e "'5\\..*\\..*'" -o)
