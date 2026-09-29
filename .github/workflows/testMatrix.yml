@@ -1,0 +1,26 @@
+name: Pre Teste Versao
+
+on:
+  workflow_dispatch:
+    inputs:
+        sei-version:
+            required: true
+            type: string
+  workflow_call:
+    inputs:
+        sei-version:
+            required: true
+            type: string
+
+jobs:
+
+  matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        sei-version: [4.0.9, 4.1.5]
+
+    uses: ./.github/workflows/badges/testPreVersao.yml
+    secrets: inherit
+    with:
+      sei-version: ${{ matrix.sei-version }}
