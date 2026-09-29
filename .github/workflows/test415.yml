@@ -1,15 +1,6 @@
 name: sei415
 on:
   workflow_dispatch:
-    inputs:
-        sei-version:
-            required: true
-            type: string
-  workflow_call:
-    inputs:
-        sei-version:
-            required: true
-            type: string
 
 jobs:
   test:
