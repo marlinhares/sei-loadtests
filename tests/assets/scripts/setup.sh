@@ -2,10 +2,14 @@
 
 set -e
 
-SEI_DOCKER_LOCATION_INFRA=$1
-SEI_FONTES_LOCATION=$2
-ENVS_DIR=$3
-CHECKOUT_VERSION=$4
+DB=$1
+if [ "${DB}" = "" ]; then
+    DB="mysql"
+fi
+SEI_DOCKER_LOCATION_INFRA=$2
+SEI_FONTES_LOCATION=$3
+ENVS_DIR=$4
+CHECKOUT_VERSION=$5
 
 #git -C ${SEI_FONTES_LOCATION} checkout ${CHECKOUT_VERSION}
 
@@ -20,9 +24,10 @@ v="${v:1:3}"
 echo "Versao ${v}"
 
 cp ${SEI_DOCKER_LOCATION_INFRA}/envlocal-example-mysql-sei4.env ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
+cat ${SEI_DOCKER_LOCATION_INFRA}/envlocal-example-${DB}-sei4.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 
 if [ "${v:0:1}" = "5" ]; then
-    cat ${SEI_DOCKER_LOCATION_INFRA}/envlocal-example-mysql-sei5.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
+    cat ${SEI_DOCKER_LOCATION_INFRA}/envlocal-example-${DB}-sei5.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 fi
 
 echo "export LOCALIZACAO_FONTES_SEI=${SEI_FONTES_LOCATION}" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env

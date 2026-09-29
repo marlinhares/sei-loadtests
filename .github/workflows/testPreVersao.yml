@@ -4,13 +4,21 @@ on:
   workflow_dispatch:
     inputs:
         sei-version:
-            required: true
-            type: string
+          required: true
+          type: string
+        db:
+          required: true
+          type: string
+          default: mysql
   workflow_call:
     inputs:
         sei-version:
             required: true
             type: string
+        db:
+            required: true
+            type: string
+            default: mysql
 
 jobs:
 
