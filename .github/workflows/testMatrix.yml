@@ -11,5 +11,6 @@ jobs:
 
     # Call the reusable workflow
     uses: ./.github/workflows/test415.yml
+    secrets: inherit
     with:
       sei-version: ${{ matrix.sei-version }}
