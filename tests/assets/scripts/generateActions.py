@@ -1,4 +1,4 @@
-dbs = ["oracle", "sqlserver", "postgres", "mysql"]
+dbs = ["mysql", "postgres", "sqlserver", "oracle"]
 vers = ["4.0.9", "4.1.5"]
 
 cont_pre = """name: sei{}-precarga-{}
