@@ -157,13 +157,13 @@ fileContents.eachLine { line -&gt;
         </JSR223Sampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga Inicial Usuarios" enabled="true">
-        <intProp name="ThreadGroup.num_threads">5</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga Inicial Usuarios">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -190,7 +190,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUsuariosLoop)}</stringProp>
         </LoopController>
@@ -242,13 +242,13 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Unidades" enabled="true">
-        <intProp name="ThreadGroup.num_threads">5</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Unidades">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -327,13 +327,13 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Hierarquia de Unidades" enabled="true">
-        <intProp name="ThreadGroup.num_threads">5</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Hierarquia de Unidades">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -412,13 +412,13 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Permissão de Usuários" enabled="true">
-        <intProp name="ThreadGroup.num_threads">5</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Permissão de Usuários">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -536,13 +536,13 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI - Unidade Configurar Numero" enabled="true">
-        <intProp name="ThreadGroup.num_threads">5</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI - Unidade Configurar Numero">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
-          <stringProp name="LoopController.loops">1</stringProp>
+          <stringProp name="LoopController.loops">5</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
       </ThreadGroup>
@@ -621,7 +621,7 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI  - Configurar Assinatura das Unidades" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI  - Configurar Assinatura das Unidades">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -4042,7 +4042,7 @@ vars.put(&quot;hdnUnidades&quot;, hdnUnidades )
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>

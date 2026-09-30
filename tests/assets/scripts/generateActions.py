@@ -36,7 +36,10 @@ head="""|Versão| Mysql | Postgres | SqlServer | Oracle
 |--|--|--|--|--|
 """
 
-body = """| 4.1.5 | [![sei{}-precarga-{}](actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-precarga-{}.yml) [![sei{}-carga-{}](actions/workflows/badge-sei{}-carga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-carga-{}.yml) | [![sei{}-precarga-{}](actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-precarga-{}.yml) | [![sei{}-precarga-{}](actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-precarga-{}.yml) | [![sei{}-precarga-{}](actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-precarga-{}.yml) |"""
+body_image_pre="[![sei{}-precarga-{}](actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-precarga-{}.yml)"
+body_image_carga="[![sei{}-carga-{}](actions/workflows/badge-sei{}-carga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-carga-{}.yml)"
+
+body = ""
 
 for v in vers:
     for db in dbs:
@@ -55,4 +58,17 @@ for v in vers:
 
 
 
+for v in vers:
+
+    body += f"| {v} | "
+
+    for db in dbs:
+
+        img_pre = body_image_pre.format(v, db, v, db, v, db)
+        img_carga = body_image_carga.format(v, db, v, db, v, db)
+        body += '|' + img_pre + img_carga + '|'
+
+    body += "\n"
+
+body = head + body
 
