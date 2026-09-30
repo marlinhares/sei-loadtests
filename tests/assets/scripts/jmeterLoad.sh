@@ -31,7 +31,7 @@ if [ "${MODE}" = "preload" ]; then
 
 
     set +e
-    e=$(grep ",false," ${DIR_TESTE_EXE}/result-precarga.jtl | wc -l)
+    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-precarga.jtl | wc -l)
     set -e
 
     cp ${DIR_TESTE_EXE}/result-precarga.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-precarga.jtl
@@ -47,12 +47,13 @@ if [ "${MODE}" = "load" ]; then
 
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
-        alpine/jmeter:5.6.3 -n -t CargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-carga.jtl
+        alpine/jmeter:5.6.3 -n -t CargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-carga.jtl \
+            -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
     rm -rf ${DIR_TESTE_EXE}/testProperties-test.prop || true
 
     set +e
-    e=$(grep ",false," ${DIR_TESTE_EXE}/result-carga.jtl | wc -l)
+    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-carga.jtl | wc -l)
     set -e
 
     cp ${DIR_TESTE_EXE}/result-carga.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-carga.jtl
