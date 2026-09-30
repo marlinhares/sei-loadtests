@@ -1,5 +1,5 @@
 dbs = ["mysql", "postgres", "sqlserver", "oracle"]
-vers = ["4.0.9", "4.0.12", "4.0.12.15", "4.1.5"]
+vers = ["4.0.9", "4.0.12", "4.0.12.15", "4.1.3", "4.1.4", "4.1.5", "5.0.1", "5.0.2", "5.0.3", "5.0.4", "5.0.5"]
 
 
 cont_carga = """name: sei{}-carga-{}
@@ -28,6 +28,7 @@ body = ""
 for v in vers:
     for db in dbs:
 
+        v = v.replace("/", ".")
         print(f"Criando arquivo de carga {v} db: {db}")
 
         with open(f"generated/badge-sei{v}-carga-{db}.yml", "w", encoding="utf-8") as f:
