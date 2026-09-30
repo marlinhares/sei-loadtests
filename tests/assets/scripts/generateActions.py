@@ -72,3 +72,4 @@ for v in vers:
 
 body = head + body
 
+print(body)
