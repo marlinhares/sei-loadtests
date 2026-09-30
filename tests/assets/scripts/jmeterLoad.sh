@@ -36,10 +36,6 @@ if [ "${MODE}" = "preload" ]; then
 
     cp ${DIR_TESTE_EXE}/result-pretestes.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-pretestes.jtl
 
-    ls ${DIR_TESTE_EXE}/../../tests/assets/testResults/
-
-    ls -lRh
-
     if [ "$e" != "0" ]; then
         echo "Falha no pre-teste. Abandonando execucao. Verifique o arquivo result-testes.jtl"
         exit 1
