@@ -14,8 +14,7 @@ SEI_FONTES_LOCATION ?= $(MAKEFILE_DIR)assets/repos/sei-fontes
 DB ?= "mysql"
 
 
-precarga: download-sei-docker download-sei-fontes sei-setup jmeter-precarga
-carga: precarga jmeter-carga
+carga: download-sei-docker download-sei-fontes sei-setup jmeter-precarga jmeter-carga
 
 download-sei-docker:
 	@if [ ! -d "$(SEI_DOCKER_LOCATION)" ] || [ $$(ls -A "$(SEI_DOCKER_LOCATION)" | wc -l) -eq 0 ]; then \
@@ -49,7 +48,7 @@ sei-setup:
 	$(SCRIPTS_DIR)/setup.sh $(DB) $(SEI_DOCKER_LOCATION_INFRA) $(SEI_FONTES_LOCATION) $(ENVS_DIR)
 
 jmeter-precarga:
-	@echo "Running jmeter tests..."
+	@echo "Running jmeter pre tests..."
 	$(SCRIPTS_DIR)/jmeterLoad.sh "preload" $(SEI_FONTES_LOCATION) $(ENVS_DIR)
 
 jmeter-carga:

@@ -7,6 +7,7 @@ jmeter.log
 **/jmeter.log
 **/result-carga.jtl
 **/result-precarga.jtl
+**/result-test.jtl
 **/testes-de-carga-stress/resultado.csv
 testes-de-carga-stress/resultadoweb
 testes-de-monitoramento/monitoramento-cookies-nagios/errors.txt

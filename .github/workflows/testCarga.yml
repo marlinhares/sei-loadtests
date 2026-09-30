@@ -58,5 +58,5 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: pre-test-results
-          path: sei-loadtests/tests/assets/testResults/result-carga.jtl
+          path: sei-loadtests/tests/assets/testResults/result-test.jtl
 

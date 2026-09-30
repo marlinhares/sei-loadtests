@@ -19,25 +19,25 @@ DIR_TESTE_EXE="${DIR_TESTE_EXE}/../../../v${v}.x/testes-de-carga-stress"
 
 yes | cp ${DIR_PROP}/testProperties-test.prop ${DIR_TESTE_EXE}/testProperties-test.prop
 
-rm -rf ${DIR_TESTE_EXE}/result-testes.jtl || true
+rm -rf ${DIR_TESTE_EXE}/result-test.jtl || true
 
 
 if [ "${MODE}" = "preload" ]; then
 
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
-        alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-precarga.jtl \
+        alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
             -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
 
     set +e
-    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-precarga.jtl | wc -l)
+    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
     set -e
 
-    cp ${DIR_TESTE_EXE}/result-precarga.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-precarga.jtl
+    cp ${DIR_TESTE_EXE}/result-test.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-test.jtl
 
     if [ "$e" != "0" ]; then
-        echo "Falha no pre-teste. Abandonando execucao. Verifique o arquivo result-precarga.jtl"
+        echo "Falha no pre-teste. Abandonando execucao. Verifique o arquivo result-test.jtl"
         exit 1
     fi
 
@@ -47,19 +47,19 @@ if [ "${MODE}" = "load" ]; then
 
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
-        alpine/jmeter:5.6.3 -n -t CargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-carga.jtl \
+        alpine/jmeter:5.6.3 -n -t CargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
             -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
     rm -rf ${DIR_TESTE_EXE}/testProperties-test.prop || true
 
     set +e
-    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-carga.jtl | wc -l)
+    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
     set -e
 
-    cp ${DIR_TESTE_EXE}/result-carga.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-carga.jtl
+    cp ${DIR_TESTE_EXE}/result-test.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-test.jtl
 
     if [ "$e" != "0" ]; then
-        echo "Falha no teste de carga. Abandonando execucao. Verifique o arquivo result-carga.jtl"
+        echo "Falha no teste de carga. Abandonando execucao. Verifique o arquivo result-test.jtl"
         exit 1
     fi
 
