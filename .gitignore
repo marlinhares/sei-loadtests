@@ -5,8 +5,8 @@
 **/assets/runtimeassets/cadProc/unidade*
 jmeter.log
 **/jmeter.log
-**/result-testes.jtl
-**/result-pretestes.jtl
+**/result-carga.jtl
+**/result-precarga.jtl
 **/testes-de-carga-stress/resultado.csv
 testes-de-carga-stress/resultadoweb
 testes-de-monitoramento/monitoramento-cookies-nagios/errors.txt

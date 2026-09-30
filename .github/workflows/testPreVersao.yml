@@ -1,4 +1,4 @@
-name: Pre Teste Versao
+name: Carga Pre
 
 on:
 
@@ -53,9 +53,9 @@ jobs:
           cd sei-loadtests/tests
           make DB=${{ inputs.db }} precarga
 
-      - name: Archive pretest artifacts
+      - name: Archive precarga artifacts
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: pre-test-results
-          path: sei-loadtests/tests/assets/testResults/result-pretestes.jtl
+          path: sei-loadtests/tests/assets/testResults/result-precarga.jtl

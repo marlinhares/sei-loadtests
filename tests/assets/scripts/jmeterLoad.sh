@@ -26,18 +26,18 @@ if [ "${MODE}" = "preload" ]; then
 
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
-        alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-pretestes.jtl \
+        alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-precarga.jtl \
             -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
 
     set +e
-    e=$(grep ",false," ${DIR_TESTE_EXE}/result-pretestes.jtl | wc -l)
+    e=$(grep ",false," ${DIR_TESTE_EXE}/result-precarga.jtl | wc -l)
     set -e
 
-    cp ${DIR_TESTE_EXE}/result-pretestes.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-pretestes.jtl
+    cp ${DIR_TESTE_EXE}/result-precarga.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-precarga.jtl
 
     if [ "$e" != "0" ]; then
-        echo "Falha no pre-teste. Abandonando execucao. Verifique o arquivo result-testes.jtl"
+        echo "Falha no pre-teste. Abandonando execucao. Verifique o arquivo result-precarga.jtl"
         exit 1
     fi
 
@@ -47,18 +47,18 @@ if [ "${MODE}" = "load" ]; then
 
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
-        alpine/jmeter:5.6.3 -n -t CargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-testes.jtl
+        alpine/jmeter:5.6.3 -n -t CargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-carga.jtl
 
     rm -rf ${DIR_TESTE_EXE}/testProperties-test.prop || true
 
     set +e
-    e=$(grep ",false," ${DIR_TESTE_EXE}/result-testes.jtl | wc -l)
+    e=$(grep ",false," ${DIR_TESTE_EXE}/result-carga.jtl | wc -l)
     set -e
 
-    cp ${DIR_TESTE_EXE}/result-testes.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-testes.jtl
+    cp ${DIR_TESTE_EXE}/result-carga.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-carga.jtl
 
     if [ "$e" != "0" ]; then
-        echo "Falha no teste de carga. Abandonando execucao. Verifique o arquivo result-testes.jtl"
+        echo "Falha no teste de carga. Abandonando execucao. Verifique o arquivo result-carga.jtl"
         exit 1
     fi
 
