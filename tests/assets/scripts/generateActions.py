@@ -36,8 +36,8 @@ head="""|Versão| Mysql | Postgres | SqlServer | Oracle
 |--|--|--|--|--|
 """
 
-body_image_pre="[![sei{}-precarga-{}](actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-precarga-{}.yml)"
-body_image_carga="[![sei{}-carga-{}](actions/workflows/badge-sei{}-carga-{}.yml/badge.svg)](actions/workflows/badge-sei{}-carga-{}.yml)"
+body_image_pre="[![sei{}-precarga-{}](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei{}-precarga-{}.yml/badge.svg)](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei{}-precarga-{}.yml)"
+body_image_carga="[![sei{}-carga-{}](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei{}-carga-{}.yml/badge.svg)](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei{}-carga-{}.yml)"
 
 body = ""
 
