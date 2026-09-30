@@ -12,6 +12,7 @@ SEI_FONTES_REPO ?= https://github.com/pengovbr/sei
 SEI_FONTES_LOCATION ?= $(MAKEFILE_DIR)assets/repos/sei-fontes
 
 DB ?= "mysql"
+export DB
 
 pretest: download-sei-docker download-sei-fontes sei-setup jmeter-preload
 test: pretest jmeter-load
