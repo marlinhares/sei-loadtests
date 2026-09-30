@@ -1,4 +1,4 @@
-name: sei4.1.5-precarga-oracle
+name: sei4.1.5-carga-postgres
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/testCargaPre.yml
+    uses: ./.github/workflows/testCarga.yml
     secrets: inherit
     with:
       sei-version: 4.1.5
-      db: oracle
+      db: postgres
