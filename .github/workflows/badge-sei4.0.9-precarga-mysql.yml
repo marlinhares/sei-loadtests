@@ -1,4 +1,4 @@
-name: sei4.1.5-precarga-mysql
+name: sei4.0.9-precarga-mysql
 
 on:
   push:
@@ -9,6 +9,6 @@ jobs:
     uses: ./.github/workflows/testCargaPre.yml
     secrets: inherit
     with:
-      sei-version: 4.1.5
+      sei-version: 4.0.9
       db: mysql
 

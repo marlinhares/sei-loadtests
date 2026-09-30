@@ -60,15 +60,15 @@ for v in vers:
 
 for v in vers:
 
-    body += f"| {v} | "
+    body += f"| {v} "
 
     for db in dbs:
 
         img_pre = body_image_pre.format(v, db, v, db, v, db)
         img_carga = body_image_carga.format(v, db, v, db, v, db)
-        body += '|' + img_pre + img_carga + '|'
+        body += '|' + img_pre + '<br>' + img_carga
 
-    body += "\n"
+    body += "|\n"
 
 body = head + body
 
