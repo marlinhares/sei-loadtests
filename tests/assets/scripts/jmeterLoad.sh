@@ -5,12 +5,6 @@ set -e
 MODE=$1
 SEI_FONTES_LOCATION=$2
 DIR_PROP=$3
-DB=$4
-
-if [ "${DB}" = "" ]; then
-    DB="mysql"
-fi
-
 
 if [ -d "${SEI_FONTES_LOCATION}/src" ]; then
     SEI_FONTES_LOCATION=${SEI_FONTES_LOCATION}/src
@@ -30,18 +24,9 @@ rm -rf ${DIR_TESTE_EXE}/result-testes.jtl || true
 
 if [ "${MODE}" = "preload" ]; then
 
-    if [ "${DB}" = "oracle" ]; then
-        docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
-        -i -v ${DIR_TESTE_EXE}:/t -w /t \
-        alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-pretestes.jtl \
-            -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
-    else
-
-        docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
+    docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
         alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-pretestes.jtl
-
-    fi
 
 
     set +e
