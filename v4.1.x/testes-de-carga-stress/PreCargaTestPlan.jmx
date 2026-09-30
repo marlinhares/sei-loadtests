@@ -86,7 +86,7 @@
         <collectionProp name="HeaderManager.headers"/>
       </HeaderManager>
       <hashTree/>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Iniciar">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Iniciar" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -97,12 +97,12 @@
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">import org.apache.jmeter.services.FileServer; 
+          <stringProp name="script">import org.apache.jmeter.services.FileServer;
 
 
 qtdUnidades = vars.get(&quot;qtdUnidadesInicial&quot;).toInteger()
@@ -114,7 +114,7 @@ if (x != 0){
 }
 
 
-qtdUnidadesLoop = qtdUnidades
+qtdUnidadesLoop = qtdUnidades / 5
 qtdUnidadesLoop = qtdUnidadesLoop + &quot;&quot;
 
 
@@ -123,7 +123,7 @@ props.put(&quot;propQtdUnidadesLoop&quot;, qtdUnidadesLoop)
 
 qtdUsuarios = qtdUnidades * 20
 
-qtdUsuariosLoop = qtdUsuarios
+qtdUsuariosLoop = qtdUsuarios / 5
 qtdUsuariosLoop = qtdUsuariosLoop + &quot;&quot;
 
 props.put(&quot;propQtdUsuariosLoop&quot;, qtdUsuariosLoop)
@@ -131,7 +131,7 @@ props.put(&quot;propQtdUsuariosLoop&quot;, qtdUsuariosLoop)
 
 basedir = FileServer.getFileServer().getBaseDir();
 def fileContents = new File(basedir + &apos;/assets/cpfs.csv&apos;).getText(&apos;UTF-8&apos;);
-def lines = 0 
+def lines = 0
 
 fileContents.eachLine { line -&gt;
       lines++;
@@ -141,7 +141,7 @@ fileContents.eachLine { line -&gt;
 
 
 fileContents = new File(basedir + &apos;/assets/unidades.csv&apos;).getText(&apos;UTF-8&apos;);
-lines = 0 
+lines = 0
 
 fileContents.eachLine { line -&gt;
       lines++;
@@ -157,8 +157,8 @@ fileContents.eachLine { line -&gt;
         </JSR223Sampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga Inicial Usuarios">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga Inicial Usuarios" enabled="true">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
@@ -190,7 +190,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUsuariosLoop)}</stringProp>
         </LoopController>
@@ -242,8 +242,8 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Unidades">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Unidades" enabled="true">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
@@ -275,7 +275,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUnidadesLoop)}</stringProp>
         </LoopController>
@@ -327,8 +327,8 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Hierarquia de Unidades">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Hierarquia de Unidades" enabled="true">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">10</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
@@ -360,7 +360,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUnidadesLoop)}</stringProp>
         </LoopController>
@@ -412,7 +412,7 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Permissão de Usuários">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Carga de Permissão de Usuários" enabled="true">
         <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -428,7 +428,7 @@ fileContents.eachLine { line -&gt;
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>
           <stringProp name="cacheKey">true</stringProp>
-          <stringProp name="script">import org.apache.jmeter.services.FileServer; 
+          <stringProp name="script">import org.apache.jmeter.services.FileServer;
 
 
 qtdUnidades = vars.get(&quot;qtdUnidadesInicial&quot;).toInteger()
@@ -440,7 +440,7 @@ vars.put(&quot;qtdUsuariosInicial&quot;, qtdUsuarios)
 
 basedir = FileServer.getFileServer().getBaseDir();
 def fileContents = new File(basedir + &apos;/assets/cpfs.csv&apos;).getText(&apos;UTF-8&apos;);
-def lines = 0 
+def lines = 0
 
 fileContents.eachLine { line -&gt;
       lines++;
@@ -450,7 +450,7 @@ fileContents.eachLine { line -&gt;
 
 
 fileContents = new File(basedir + &apos;/assets/unidades.csv&apos;).getText(&apos;UTF-8&apos;);
-lines = 0 
+lines = 0
 
 fileContents.eachLine { line -&gt;
       lines++;
@@ -484,7 +484,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUnidadesLoop)}</stringProp>
         </LoopController>
@@ -536,8 +536,8 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI - Unidade Configurar Numero">
-        <intProp name="ThreadGroup.num_threads">1</intProp>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI - Unidade Configurar Numero" enabled="true">
+        <intProp name="ThreadGroup.num_threads">5</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">stoptest</stringProp>
@@ -569,7 +569,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUnidadesLoop)}</stringProp>
         </LoopController>
@@ -621,7 +621,7 @@ fileContents.eachLine { line -&gt;
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI  - Configurar Assinatura das Unidades">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="SEI  - Configurar Assinatura das Unidades" enabled="true">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -654,7 +654,7 @@ fileContents.eachLine { line -&gt;
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Unidades">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Unidades" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${__property(propQtdUnidades)}</stringProp>
         </LoopController>
@@ -2240,7 +2240,7 @@ min = (unidadeindex_arquivo -1) * 20
 max = unidadeindex_arquivo * 20
 
 
-max += &quot;&quot; 
+max += &quot;&quot;
 min += &quot;&quot;
 
 
@@ -2294,8 +2294,8 @@ vars.put(&apos;stepMin&apos;, min)
 
 l = l.split(&apos;,&apos;)
 
-vars.put(&quot;usuariosigla&quot;, l[0]) 
-vars.put(&quot;usuarionome&quot;, l[1]) 
+vars.put(&quot;usuariosigla&quot;, l[0])
+vars.put(&quot;usuarionome&quot;, l[1])
 vars.put(&quot;cpf&quot;, l[2]) </stringProp>
             </JSR223Sampler>
             <hashTree/>
@@ -3942,7 +3942,7 @@ for(i=1; i&lt;=a; i=i+2){
     siglanome = vars.get(&quot;hdnUnidades_&quot; + i )
 
     hdnUnidades = hdnUnidades + &quot;${idunidade}±${siglanome}¥&quot;
-    
+
 }
 
 //log.info(&quot;jjjjjjjjj&quot; + a)
@@ -4042,7 +4042,7 @@ vars.put(&quot;hdnUnidades&quot;, hdnUnidades )
           <hashTree/>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
