@@ -1,4 +1,4 @@
-name: sei4.1.5-pretest-postgres
+name: sei4.1.5-precarga-sqlserver
 
 on:
   push:
@@ -10,4 +10,4 @@ jobs:
     secrets: inherit
     with:
       sei-version: 4.1.5
-      db: postgres
+      db: sqlserver

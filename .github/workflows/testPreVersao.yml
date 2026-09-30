@@ -24,7 +24,7 @@ on:
 
 jobs:
 
-  pretest:
+  precarga:
     runs-on: ubuntu-latest
 
     steps:
@@ -48,10 +48,10 @@ jobs:
           repository: pengovbr/sei-docker
           path: sei-loadtests/tests/assets/repos/sei-docker
 
-      - name: RunPreTests
+      - name: RunPreCarga
         run: |
           cd sei-loadtests/tests
-          make DB=${{ inputs.db }} pretest
+          make DB=${{ inputs.db }} precarga
 
       - name: Archive pretest artifacts
         if: always()

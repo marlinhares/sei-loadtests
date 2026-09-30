@@ -14,6 +14,8 @@ if [ -d "${SEI_FONTES_LOCATION}/src" ]; then
     SEI_FONTES_LOCATION=${SEI_FONTES_LOCATION}/src
 fi
 
+SEI_DOCKER_LOCATION_COMPOSE=${SEI_DOCKER_LOCATION_INFRA}/orquestrators/docker-compose
+
 v=$(grep -e "define('SEI_VERSAO'" -e "const SEI_VERSAO" ${SEI_FONTES_LOCATION}/sei/web/SEI.php)
 v=$(echo ${v} | grep -e "define('SEI_VERSAO'" -e "const SEI_VERSAO" | grep -e "'4\\..*\\..*'" -e "'5\\..*\\..*'" -o)
 v="${v:1:3}"
@@ -33,6 +35,8 @@ echo "" >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 cat ${ENVS_DIR}/envcomplemento.env >> ${SEI_DOCKER_LOCATION_INFRA}/envlocal.env
 
 make -C ${SEI_DOCKER_LOCATION_INFRA} setup
+
+docker compose -f ${SEI_DOCKER_LOCATION_COMPOSE}/docker-compose.yml down app-agendador
 
 echo "Vamos tentar acessar a pagina de login do SEI, vamos aguardar ate 95 segs."
 for number in $(seq 1 18); do
