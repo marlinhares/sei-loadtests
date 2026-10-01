@@ -6,6 +6,8 @@ vers = [
         {'nome': '4.1.3', 'checkout': '4.1.3'},
         {'nome': '4.1.4', 'checkout': '4.1.4'},
         {'nome': '4.1.5', 'checkout': '4.1.5'},
+        {'nome': '5.0.1', 'checkout': '5.0.1'},
+        {'nome': '5.0.2', 'checkout': '5.0.2'},
         {'nome': '5.0.3', 'checkout': '5.0.3'},
         {'nome': '5.0.4', 'checkout': '5.0.4'},
         {'nome': '5.0.5', 'checkout': '5.0.5'},
