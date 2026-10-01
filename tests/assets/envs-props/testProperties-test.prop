@@ -21,35 +21,35 @@ qtdUsers_002=1
 rampup_002=0
 loopCount_002=5
 threadDuration_002=180
-startupDelay_002=90
+startupDelay_002=100
 
 # Cenario003
 qtdUsers_003=2
 rampup_003=10
 loopCount_003=10
 threadDuration_003=180
-startupDelay_003=100
+startupDelay_003=120
 
 # Cenario004 - gerarpdf maior gargalo no app
 qtdUsers_004=1
 rampup_004=0
 loopCount_004=1
 threadDuration_004=180
-startupDelay_004=120
+startupDelay_004=150
 
 # Cenario005
 qtdUsers_005=2
 rampup_005=10
 loopCount_005=5
 threadDuration_005=180
-startupDelay_005=150
+startupDelay_005=180
 
 # Cenario006
 qtdUsers_006=1
 rampup_006=180
 loopCount_006=5
 threadDuration_006=180
-startupDelay_006=150
+startupDelay_006=180
 
 ####################################
 # propriedades do ambiente
