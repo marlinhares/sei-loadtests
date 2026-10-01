@@ -22,7 +22,7 @@ head="""|Versão| Mysql | Postgres | SqlServer | Oracle
 """
 
 head="""|Versão| Resultado |
-|--|--|--|--|--|
+|--|--|
 """
 
 body_image_carga="[![sei{}-carga-{}](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei{}-carga-{}.yml/badge.svg)](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei{}-carga-{}.yml)"

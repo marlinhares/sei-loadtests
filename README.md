@@ -5,7 +5,7 @@ Projeto com scripts no jmeter para testes de carga e stress no SEI.
 Testado em SEI: 4.0.9, 4.0.12, 4.0.12.15, 4.1.3, 4.1.4 e 4.1.5.
 
 |Versão| Resultado |
-|--|--|--|--|--|
+|--|--|
 | 4.0.9 | [![sei4.0.9-carga-mysql](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei4.0.9-carga-mysql.yml/badge.svg)](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei4.0.9-carga-mysql.yml) |
 | 4.0.12 | [![sei4.0.12-carga-mysql](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei4.0.12-carga-mysql.yml/badge.svg)](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei4.0.12-carga-mysql.yml) |
 | 4.0.12.15 | [![sei4.0.12.15-carga-mysql](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei4.0.12.15-carga-mysql.yml/badge.svg)](https://github.com/marlinhares/sei-loadtests/actions/workflows/badge-sei4.0.12.15-carga-mysql.yml) |
