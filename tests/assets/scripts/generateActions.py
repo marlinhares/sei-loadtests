@@ -1,4 +1,4 @@
-dbs = ["mysql", "postgres", "sqlserver", "oracle"]
+dbs = ["mysql"]
 vers = ["4.0.9", "4.0.12", "4.0.12.15", "4.1.3", "4.1.4", "4.1.5", "5.0.1", "5.0.2", "5.0.3", "5.0.4", "5.0.5"]
 
 
@@ -18,6 +18,10 @@ jobs:
 """
 
 head="""|Versão| Mysql | Postgres | SqlServer | Oracle
+|--|--|--|--|--|
+"""
+
+head="""|Versão| Resultado |
 |--|--|--|--|--|
 """
 
