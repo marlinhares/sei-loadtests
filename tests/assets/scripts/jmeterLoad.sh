@@ -45,6 +45,7 @@ fi
 if [ "${MODE}" = "load" ]; then
 
     yes | cp ${DIR_TESTE_EXE}/CargaTestPlan.jmx ${DIR_TESTE_EXE}/CargaTestPlan-test.jmx
+    sed -i 's|<boolProp name="TestPlan.serialize_threadgroups">false</boolProp>|<boolProp name="TestPlan.serialize_threadgroups">true</boolProp>|g' ${DIR_TESTE_EXE}/CargaTestPlan.jmx
     sed -i 's|<boolProp name="TestPlan.serialize_threadgroups">false</boolProp>|<boolProp name="TestPlan.serialize_threadgroups">true</boolProp>|g' ${DIR_TESTE_EXE}/CargaTestPlan-test.jmx
     cat ${DIR_TESTE_EXE}/CargaTestPlan-test.jmx
     #exit 0
