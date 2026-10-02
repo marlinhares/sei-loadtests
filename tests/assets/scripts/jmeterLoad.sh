@@ -64,6 +64,13 @@ if [ "${MODE}" = "load" ]; then
     \$r = \$conexao->consultarSql('select texto_log from infra_log');
 	print_r(\$r);"
 
+    php -r "
+    require_once '/opt/sei/web/SEI.php';
+    \$conexao = BancoSEI::getInstance();
+    \$conexao->abrirConexao();
+    \$r = \$conexao->consultarSql('select texto_log from infra_log');
+	print_r(\$r);"
+
     set +e
     e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
     set -e
