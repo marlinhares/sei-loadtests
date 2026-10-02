@@ -23,6 +23,30 @@ rm -rf ${DIR_TESTE_EXE}/result-test.jtl || true
 
 if [ "${MODE}" = "preload" ]; then
 
+    sleep 10
+    docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
+        -i -v ${DIR_TESTE_EXE}:/t -w /t \
+        alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
+            -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
+
+    docker ps -a
+    docker logs docker-compose-db-1
+    docker cp ${DIR_PROP}/../scripts/teste.sh  docker-compose-app-1:/
+    docker exec -i docker-compose-app-1 bash -c "/teste.sh"
+
+
+    set +e
+    e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
+    set -e
+
+    cp ${DIR_TESTE_EXE}/result-test.jtl ${DIR_TESTE_EXE}/../../tests/assets/testResults/result-test.jtl
+
+    if [ "$e" != "0" ]; then
+        echo "Falha no pre-teste. Abandonando execucao. Verifique o arquivo result-test.jtl"
+        #exit 1
+    fi
+
+    sleep 5
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
         alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
