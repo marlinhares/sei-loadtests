@@ -506,7 +506,7 @@ if(bolKeepRuntimeAssets != &quot;true&quot;){
         </JSR223Sampler>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário001-Cadastrar Processos" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário001-Cadastrar Processos">
         <stringProp name="ThreadGroup.num_threads">${qtdUsers_001}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampup_001}</stringProp>
         <stringProp name="ThreadGroup.duration">${threadDuration_001}</stringProp>
@@ -519,7 +519,7 @@ if(bolKeepRuntimeAssets != &quot;true&quot;){
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao"/>
         <hashTree>
           <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
@@ -1896,7 +1896,7 @@ vars.put(&quot;hdnInteressadosProcedimento&quot;, i)</stringProp>
             <hashTree/>
           </hashTree>
         </hashTree>
-        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Docs Internos">
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Docs Internos" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
           <stringProp name="LoopController.loops">${CadProc_qtdDocsInternos}</stringProp>
         </LoopController>
@@ -2314,7 +2314,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                 <hashTree/>
               </hashTree>
             </hashTree>
-            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="NovoDocInterno/Salvar"/>
+            <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="NovoDocInterno/Salvar" enabled="true"/>
             <hashTree>
               <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Salvar Documento" enabled="true">
                 <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
@@ -3097,7 +3097,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                 </elementProp>
               </HTTPSamplerProxy>
               <hashTree/>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Clique em Editar/Botao">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Clique em Editar/Botao" enabled="true">
                 <stringProp name="HTTPSampler.contentEncoding">iso-8859-1</stringProp>
                 <stringProp name="HTTPSampler.path">${path_prefix_sei}/controlador.php</stringProp>
                 <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3159,7 +3159,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                 </elementProp>
               </HTTPSamplerProxy>
               <hashTree>
-                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion">
+                <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
                   <collectionProp name="Asserion.test_strings">
                     <stringProp name="-1298842873">window.INFRA_EDITOR_CONFIG</stringProp>
                   </collectionProp>
@@ -3179,7 +3179,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
                 </RegexExtractor>
                 <hashTree/>
-                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                   <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                   <stringProp name="RegexExtractor.refname">infra_hash1</stringProp>
                   <stringProp name="RegexExtractor.regex">&quot;urlConfirmarAtualizacao&quot;:&quot;controlador_ajax.php\?id_documento=.*&amp;acao_ajax=corfirmacao_atualizacao_documento.*&amp;infra_hash=(.*?)&quot;,&quot;urlSalvar&quot;</stringProp>
@@ -3189,7 +3189,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
                 </RegexExtractor>
                 <hashTree/>
-                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                   <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                   <stringProp name="RegexExtractor.refname">infra_hash2</stringProp>
                   <stringProp name="RegexExtractor.regex">&quot;urlConfirmarAtualizacao&quot;:&quot;controlador_ajax.php\?acao_ajax=corfirmacao_atualizacao_documento&amp;.*&amp;infra_hash=(.*?)&quot;,&quot;urlSalvar</stringProp>
@@ -3229,7 +3229,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
                 </RegexExtractor>
                 <hashTree/>
-                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                   <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                   <stringProp name="RegexExtractor.refname">editor_salvar_qs</stringProp>
                   <stringProp name="RegexExtractor.regex">,&quot;urlSalvar&quot;:&quot;controlador_rest.php\?(.*?)&quot;,&quot;atualizarArvoreAoIniciar&quot;</stringProp>
@@ -3259,7 +3259,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <boolProp name="RegexExtractor.default_empty_value">false</boolProp>
                 </RegexExtractor>
                 <hashTree/>
-                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor">
+                <XPathExtractor guiclass="XPathExtractorGui" testclass="XPathExtractor" testname="XPath Extractor" enabled="true">
                   <stringProp name="XPathExtractor.default"></stringProp>
                   <stringProp name="XPathExtractor.refname">txaEditors</stringProp>
                   <stringProp name="XPathExtractor.matchNumber">-1</stringProp>
@@ -3269,7 +3269,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <boolProp name="XPathExtractor.namespace">false</boolProp>
                 </XPathExtractor>
                 <hashTree/>
-                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor">
+                <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
                   <stringProp name="RegexExtractor.useHeaders">false</stringProp>
                   <stringProp name="RegexExtractor.refname">jsonSections</stringProp>
                   <stringProp name="RegexExtractor.regex">&quot;initialData&quot;:(.*?),&quot;root</stringProp>
@@ -3279,7 +3279,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <stringProp name="RegexExtractor.match_number">1</stringProp>
                 </RegexExtractor>
                 <hashTree/>
-                <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor">
+                <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor" enabled="true">
                   <stringProp name="JMESExtractor.referenceName">jsonSectionsKey</stringProp>
                   <stringProp name="JMESExtractor.jmesPathExpr">keys(@)</stringProp>
                   <stringProp name="JMESExtractor.matchNumber">-1</stringProp>
@@ -3287,7 +3287,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                   <stringProp name="Scope.variable">jsonSections</stringProp>
                 </JMESPathExtractor>
                 <hashTree/>
-                <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor">
+                <JMESPathExtractor guiclass="JMESPathExtractorGui" testclass="JMESPathExtractor" testname="JSON JMESPath Extractor" enabled="true">
                   <stringProp name="JMESExtractor.referenceName">jsonSectionsValue</stringProp>
                   <stringProp name="JMESExtractor.jmesPathExpr">*</stringProp>
                   <stringProp name="JMESExtractor.matchNumber">-1</stringProp>
@@ -3296,7 +3296,7 @@ vars.put(&quot;id_serie_rand&quot;, id_serie_rand + &quot;&quot;)
                 </JMESPathExtractor>
                 <hashTree/>
               </hashTree>
-              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
+              <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
                 <stringProp name="scriptLanguage">groovy</stringProp>
                 <stringProp name="parameters"></stringProp>
                 <stringProp name="filename"></stringProp>
@@ -3457,7 +3457,7 @@ vars.put(&quot;secao_3_texto&quot;, sequencia_inicial + sequencia_pesquisa + seq
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 1/Ajax">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 1/Ajax" enabled="true">
                 <stringProp name="HTTPSampler.contentEncoding">iso-8859-1</stringProp>
                 <stringProp name="HTTPSampler.path">${path_prefix_sei}/controlador_ajax.php</stringProp>
                 <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3554,7 +3554,7 @@ vars.put(&quot;secao_3_texto&quot;, sequencia_inicial + sequencia_pesquisa + seq
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 1/Salvar">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 1/Salvar" enabled="true">
                 <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
                 <stringProp name="HTTPSampler.path">${path_prefix_sei}/controlador_rest.php?${editor_salvar_qs}</stringProp>
                 <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3767,7 +3767,7 @@ vars.put(&quot;secao_3_texto&quot;, sequencia_inicial + sequencia_pesquisa + seq
             </hashTree>
             <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Salvar Edicao 2" enabled="true"/>
             <hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 2/Ajax">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 2/Ajax" enabled="true">
                 <stringProp name="HTTPSampler.contentEncoding">iso-8859-1</stringProp>
                 <stringProp name="HTTPSampler.path">${path_prefix_sei}/controlador_ajax.php</stringProp>
                 <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -3921,7 +3921,7 @@ vars.put(&quot;secao_3_texto&quot;, secao_3_texto + sequencia_pesquisa )
                 </ResponseAssertion>
                 <hashTree/>
               </hashTree>
-              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 2/Salvar">
+              <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="NovoDocInterno/Salvar Edicao 2/Salvar" enabled="true">
                 <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
                 <stringProp name="HTTPSampler.path">${path_prefix_sei}/controlador_rest.php?${editor_salvar_qs}</stringProp>
                 <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
@@ -4690,7 +4690,7 @@ vars.put(&quot;cadProc_DI_&quot; + qtdDocs + &quot;_pesquisar&quot;, pesquisar)
             </hashTree>
           </hashTree>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SalvarListaProcesso"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="SalvarListaProcesso" enabled="true"/>
         <hashTree>
           <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Script Salvar Arquivo Processo" enabled="true">
             <stringProp name="scriptLanguage">groovy</stringProp>
@@ -6582,7 +6582,7 @@ vars.put(&quot;cadProcQtdDocsExterno&quot;, &quot;0&quot;)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário002-Pesquisar na Unidade" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário002-Pesquisar na Unidade">
         <stringProp name="ThreadGroup.num_threads">${qtdUsers_002}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampup_002}</stringProp>
         <stringProp name="ThreadGroup.duration">${threadDuration_002}</stringProp>
@@ -6596,15 +6596,23 @@ vars.put(&quot;cadProcQtdDocsExterno&quot;, &quot;0&quot;)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
-            <stringProp name="script">
-import org.apache.jmeter.services.FileServer;
+            <stringProp name="script">import org.apache.jmeter.services.FileServer;
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot; 
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -6614,21 +6622,11 @@ files = d.listFiles();
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-	files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
-
-	q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
-
-
 
 
 Random rand = new Random();
@@ -6738,13 +6736,22 @@ for (j=1;j&lt;=dex.size(); j++){
             <stringProp name="LoopController.loops">5</stringProp>
           </LoopController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="script">
 import org.apache.jmeter.services.FileServer;
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot; 
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -6754,21 +6761,11 @@ files = d.listFiles();
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-	files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
-
-	q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
-
-
 
 
 Random rand = new Random();
@@ -8125,7 +8122,7 @@ for (j=1;j&lt;=dex.size(); j++){
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -8177,15 +8174,24 @@ for (j=1;j&lt;=dex.size(); j++){
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">
 import org.apache.jmeter.services.FileServer;
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot;
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -8195,21 +8201,11 @@ files = d.listFiles();
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-	files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
-
-	q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
-
-
 
 
 Random rand = new Random();
@@ -9050,7 +9046,7 @@ vars.put(&quot;protocolo_formatado&quot;, procedimento_formatado)</stringProp>
             </hashTree>
           </hashTree>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -9129,6 +9125,7 @@ vars.put(&quot;protocolo_formatado&quot;, procedimento_formatado)</stringProp>
         <stringProp name="ThreadGroup.num_threads">${qtdUsers_004}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampup_004}</stringProp>
         <stringProp name="ThreadGroup.duration">${threadDuration_004}</stringProp>
+        <stringProp name="ThreadGroup.delay">${startupDelay_004}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
@@ -9140,13 +9137,23 @@ vars.put(&quot;protocolo_formatado&quot;, procedimento_formatado)</stringProp>
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">
 import org.apache.jmeter.services.FileServer;
+
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot;
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -9156,21 +9163,11 @@ files = d.listFiles();
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-	files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
-
-	q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
-
-
 
 
 Random rand = new Random();
@@ -10754,7 +10751,7 @@ vars.put(&quot;chkItemArray&quot;, v)
             </hashTree>
           </hashTree>
         </hashTree>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
           <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
@@ -10829,7 +10826,7 @@ vars.put(&quot;chkItemArray&quot;, v)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário005-Anotação Registrar" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário005-Anotação Registrar">
         <stringProp name="ThreadGroup.num_threads">${qtdUsers_005}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampup_005}</stringProp>
         <stringProp name="ThreadGroup.duration">${threadDuration_005}</stringProp>
@@ -10845,13 +10842,23 @@ vars.put(&quot;chkItemArray&quot;, v)
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">
 import org.apache.jmeter.services.FileServer;
+
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot;
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -10861,22 +10868,11 @@ files = d.listFiles();
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-	files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) }
-
-	q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
-
-
-
 
 Random rand = new Random();
 File f = files[rand.nextInt(files.size())];
@@ -11597,14 +11593,14 @@ vars.put(&quot;chkSinPrioridade&quot;, v)</stringProp>
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário006-PesquisaSolrDocInterno" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário006-PesquisaSolrDocInterno">
         <stringProp name="ThreadGroup.num_threads">${qtdUsers_006}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampup_006}</stringProp>
         <stringProp name="ThreadGroup.duration">${threadDuration_006}</stringProp>
         <stringProp name="ThreadGroup.delay">${startupDelay_006}</stringProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">startnextloop</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
           <stringProp name="LoopController.loops">${loopCount_006}</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -11613,13 +11609,23 @@ vars.put(&quot;chkSinPrioridade&quot;, v)</stringProp>
       <hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
             <stringProp name="cacheKey">true</stringProp>
             <stringProp name="script">
 import org.apache.jmeter.services.FileServer;
+
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot;
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -11630,20 +11636,11 @@ timenow = new Date().getTime()
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000)  }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-    timenow = new Date().getTime()
-    files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000) }
-
-    q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
-
 
 Random rand = new Random();
 File f = files[rand.nextInt(files.size())];
@@ -11739,17 +11736,26 @@ for (j=1;j&lt;=dis.size(); j++){
         </hashTree>
         <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Pesquisar na Barra" enabled="true"/>
         <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
             <stringProp name="LoopController.loops">5</stringProp>
           </LoopController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="cacheKey">true</stringProp>
               <stringProp name="script">
 import org.apache.jmeter.services.FileServer;
+
+msgError = &quot;&quot;&quot;
+Nao ha arquivos a serem processados no diretorio de processamento.
+Verifique:
+- startupDelay no properties
+- falha de cadastro no cenario1
+- vc pode deixar o parametro bolKeepRuntimeAssets=true para que os arquivos nao 
+sejam apagados entre uma execucao e outra do plano de teste
+&quot;&quot;&quot; 
 
 basedir = FileServer.getFileServer().getBaseDir();
 
@@ -11760,19 +11766,12 @@ timenow = new Date().getTime()
 files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000)  }
 
 q = files.size()
-while(q==0){
-
-	log.info(&quot;Esperando cair arquivos no dir de processos para pesquisar&quot;)
-	log.info(&quot;Vamos esperar 30 segs para verificar se ha protocolos a serem pesquisados&quot;)
-	Thread.sleep(30000)
-
-    d = new File(dirProtocolos)
-    files = d.listFiles();
-    timenow = new Date().getTime()
-    files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000) }
-
-    q = files.size()
+if (q == 0){
+	
+	log.info(msgError)	
+	throw new Exception(msgError)    
 }
+
 
 
 Random rand = new Random();
