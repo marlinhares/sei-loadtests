@@ -28,6 +28,20 @@ if [ "${MODE}" = "preload" ]; then
         alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
             -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
+    php -r "
+    require_once '/opt/sip/web/Sip.php';
+    \$conexao = BancoSip::getInstance();
+    \$conexao->abrirConexao();
+    \$r = \$conexao->consultarSql('select texto_log from infra_log');
+	print_r(\$r);"
+
+    php -r "
+    require_once '/opt/sei/web/SEI.php';
+    \$conexao = BancoSEI::getInstance();
+    \$conexao->abrirConexao();
+    \$r = \$conexao->consultarSql('select texto_log from infra_log');
+	print_r(\$r);"
+
 
     set +e
     e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
