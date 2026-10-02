@@ -23,7 +23,7 @@ rm -rf ${DIR_TESTE_EXE}/result-test.jtl || true
 
 if [ "${MODE}" = "preload" ]; then
 
-    sleep 10
+    sleep 30
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
         alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
