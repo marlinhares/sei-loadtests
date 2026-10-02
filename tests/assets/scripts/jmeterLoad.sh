@@ -57,6 +57,13 @@ if [ "${MODE}" = "load" ]; then
 
     rm -rf ${DIR_TESTE_EXE}/testProperties-test.prop || true
 
+    php -r "
+    require_once '/opt/sip/web/Sip.php';
+    \$conexao = BancoSip::getInstance();
+    \$conexao->abrirConexao();
+    \$r = \$conexao->consultarSql('select texto_log from infra_log');
+	print_r(\$r);"
+
     set +e
     e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
     set -e
