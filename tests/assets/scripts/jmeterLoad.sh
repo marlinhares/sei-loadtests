@@ -28,7 +28,7 @@ if [ "${MODE}" = "preload" ]; then
         alpine/jmeter:5.6.3 -n -t PreCargaTestPlan.jmx -p /t/testProperties-test.prop -l /t/result-test.jtl \
             -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
-    docker cp ${DIR_TESTE_EXE}/teste.sh  docker-compose-app-1:/
+    docker cp ${DIR_PROP}/../scripts/teste.sh  docker-compose-app-1:/
     docker exec -i docker-compose-app-1 bash -c "/teste.sh"
 
 
@@ -60,7 +60,7 @@ if [ "${MODE}" = "load" ]; then
 
     rm -rf ${DIR_TESTE_EXE}/testProperties-test.prop || true
 
-    docker cp ${DIR_TESTE_EXE}/teste.sh  docker-compose-app-1:/
+    docker cp ${DIR_PROP}/../scripts/teste.sh  docker-compose-app-1:/
     docker exec -i docker-compose-app-1 bash -c "/teste.sh"
 
 
