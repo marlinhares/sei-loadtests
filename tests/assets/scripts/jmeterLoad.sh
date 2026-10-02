@@ -23,6 +23,7 @@ rm -rf ${DIR_TESTE_EXE}/result-test.jtl || true
 
 if [ "${MODE}" = "preload" ]; then
 
+    free -m
     sleep 30
     docker run --name jmeter --rm --add-host=meusei.test:host-gateway \
         -i -v ${DIR_TESTE_EXE}:/t -w /t \
