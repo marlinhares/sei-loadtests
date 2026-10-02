@@ -6,8 +6,6 @@
       <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
         <collectionProp name="Arguments.arguments"/>
       </elementProp>
-      <boolProp name="TestPlan.functional_mode">false</boolProp>
-      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
     </TestPlan>
     <hashTree>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
@@ -269,6 +267,11 @@
           <elementProp name="startupDelay_006" elementType="Argument">
             <stringProp name="Argument.name">startupDelay_006</stringProp>
             <stringProp name="Argument.value">${__P(startupDelay_006, 400)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="solrPersistTime" elementType="Argument">
+            <stringProp name="Argument.name">solrPersistTime</stringProp>
+            <stringProp name="Argument.value">${__P(solrPersistTime, 300000)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="bolRodarAssets" elementType="Argument">
@@ -10882,7 +10885,7 @@ vars.put(&quot;chkItemArray&quot;, v)
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário005-Anotação Registrar" enabled="true">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Cenário005-Anotação Registrar">
         <stringProp name="ThreadGroup.num_threads">${qtdUsers_005}</stringProp>
         <stringProp name="ThreadGroup.ramp_time">${rampup_005}</stringProp>
         <stringProp name="ThreadGroup.duration">${threadDuration_005}</stringProp>
@@ -10896,9 +10899,9 @@ vars.put(&quot;chkItemArray&quot;, v)
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -11663,9 +11666,9 @@ vars.put(&quot;chkSinPrioridade&quot;, v)</stringProp>
         </elementProp>
       </ThreadGroup>
       <hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Preparacao"/>
         <hashTree>
-          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+          <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
             <stringProp name="scriptLanguage">groovy</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
@@ -11683,13 +11686,15 @@ Verifique:
 sejam apagados entre uma execucao e outra do plano de teste
 &quot;&quot;&quot;
 
+solrPersistTime = vars.get(&quot;solrPersistTime&quot;)
+
 basedir = FileServer.getFileServer().getBaseDir();
 
 dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
 d = new File(dirProtocolos)
 files = d.listFiles();
 timenow = new Date().getTime()
-files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000)  }
+files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; solrPersistTime )  }
 
 q = files.size()
 if (q == 0){
@@ -11762,7 +11767,7 @@ for (j=1;j&lt;=dis.size(); j++){
           </JSR223Sampler>
           <hashTree/>
         </hashTree>
-        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters" enabled="true">
+        <UserParameters guiclass="UserParametersGui" testclass="UserParameters" testname="User Parameters">
           <collectionProp name="UserParameters.names">
             <stringProp name="525370246">user.login</stringProp>
             <stringProp name="294148180">user.pass</stringProp>
@@ -11776,7 +11781,7 @@ for (j=1;j&lt;=dis.size(); j++){
           <boolProp name="UserParameters.per_iteration">false</boolProp>
         </UserParameters>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Login" enabled="true">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Transaction Login">
           <boolProp name="TransactionController.parent">true</boolProp>
           <boolProp name="TransactionController.includeTimers">false</boolProp>
         </TransactionController>
@@ -11790,13 +11795,13 @@ for (j=1;j&lt;=dis.size(); j++){
           </ModuleController>
           <hashTree/>
         </hashTree>
-        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Pesquisar na Barra" enabled="true"/>
+        <GenericController guiclass="LogicControllerGui" testclass="GenericController" testname="Pesquisar na Barra"/>
         <hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
             <stringProp name="LoopController.loops">5</stringProp>
           </LoopController>
           <hashTree>
-            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao" enabled="true">
+            <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="Preparacao">
               <stringProp name="scriptLanguage">groovy</stringProp>
               <stringProp name="parameters"></stringProp>
               <stringProp name="filename"></stringProp>
@@ -11813,13 +11818,18 @@ Verifique:
 sejam apagados entre uma execucao e outra do plano de teste
 &quot;&quot;&quot; 
 
+solrPersistTime = vars.get(&quot;solrPersistTime&quot;)
+
 basedir = FileServer.getFileServer().getBaseDir();
 
 dirProtocolos = basedir + &quot;/${dirCadProc}&quot;
 d = new File(dirProtocolos)
 files = d.listFiles();
 timenow = new Date().getTime()
-files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000)  }
+//files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; 40000)  }
+files = files.findAll{ it.getName().startsWith(&quot;unidade&quot;) and ((timenow - it.lastModified() ) &gt; solrPersistTime )  }
+
+
 
 q = files.size()
 if (q == 0){
@@ -12379,7 +12389,7 @@ for (j=1;j&lt;=dis.size(); j++){
         </ResultCollector>
         <hashTree/>
       </hashTree>
-      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group" enabled="true">
+      <PostThreadGroup guiclass="PostThreadGroupGui" testclass="PostThreadGroup" testname="tearDown Thread Group">
         <intProp name="ThreadGroup.num_threads">1</intProp>
         <intProp name="ThreadGroup.ramp_time">1</intProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
@@ -12390,7 +12400,7 @@ for (j=1;j&lt;=dis.size(); j++){
         </elementProp>
       </PostThreadGroup>
       <hashTree>
-        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler" enabled="true">
+        <JSR223Sampler guiclass="TestBeanGUI" testclass="JSR223Sampler" testname="JSR223 Sampler">
           <stringProp name="scriptLanguage">groovy</stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="filename"></stringProp>

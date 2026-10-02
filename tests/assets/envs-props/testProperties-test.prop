@@ -49,7 +49,9 @@ qtdUsers_006=2
 rampup_006=0
 loopCount_006=2
 threadDuration_006=180
-startupDelay_006=0
+startupDelay_006=10
+# tempo de commit do solr em mili
+solrPersistTime=30000
 
 ####################################
 # propriedades do ambiente
