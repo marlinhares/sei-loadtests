@@ -46,7 +46,7 @@ startupDelay_005=0
 
 # Cenario006
 qtdUsers_006=2
-rampup_006=0
+rampup_006=10
 loopCount_006=2
 threadDuration_006=180
 startupDelay_006=10
