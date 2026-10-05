@@ -10,6 +10,11 @@ if [ -d "${SEI_FONTES_LOCATION}/src" ]; then
     SEI_FONTES_LOCATION=${SEI_FONTES_LOCATION}/src
 fi
 
+PROPS_FILE=${DIR_PROP}/testProperties-test.prop
+if [[ "$DB" == "sqlserver" || "$DB" == "oracle" ]]; then
+    PROPS_FILE=${DIR_PROP}/testProperties-test-sqlserver.prop
+fi
+
 v=$(grep -e "define('SEI_VERSAO'" -e "const SEI_VERSAO" ${SEI_FONTES_LOCATION}/sei/web/SEI.php)
 v=$(echo ${v} | grep -e "define('SEI_VERSAO'" -e "const SEI_VERSAO" | grep -e "'4\\..*\\..*'" -e "'5\\..*\\..*'" -o)
 v="${v:1:3}"
@@ -17,7 +22,7 @@ v="${v:1:3}"
 DIR_TESTE_EXE="$(dirname -- "${BASH_SOURCE[0]}")"
 DIR_TESTE_EXE="${DIR_TESTE_EXE}/../../../v${v}.x/testes-de-carga-stress"
 
-yes | cp ${DIR_PROP}/testProperties-test.prop ${DIR_TESTE_EXE}/testProperties-test.prop
+yes | cp ${PROPS_FILE} ${DIR_TESTE_EXE}/testProperties-test.prop
 
 rm -rf ${DIR_TESTE_EXE}/result-test.jtl || true
 
@@ -55,12 +60,6 @@ if [ "${MODE}" = "load" ]; then
             -Jjmeter.save.saveservice.response_data=true -Jjmeter.save.saveservice.output_format=xml
 
     rm -rf ${DIR_TESTE_EXE}/testProperties-test.prop || true
-
-    docker ps -a
-    docker logs docker-compose-db-1
-    docker cp ${DIR_PROP}/../scripts/teste.sh  docker-compose-app-1:/
-    docker exec -i docker-compose-app-1 bash -c "/teste.sh"
-
 
     set +e
     e=$(grep 's="false"' ${DIR_TESTE_EXE}/result-test.jtl | wc -l)
