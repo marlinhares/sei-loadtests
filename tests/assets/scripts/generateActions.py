@@ -24,7 +24,8 @@ def get_repo_owner_and_name():
 
 owner, repo = get_repo_owner_and_name()
 
-dbs = ["mysql"]
+dbs = ["mysql", "postgres", "sqlserver", "oracle"]
+# dbs = ["mysql"]
 vers = [
         {'nome': '4.0.9', 'checkout': '4.0.9'},
         {'nome': '4.0.12', 'checkout': '4.0.12'},
@@ -59,9 +60,9 @@ head="""|Versão| Mysql | Postgres | SqlServer | Oracle
 |--|--|--|--|--|
 """
 
-head="""|Versão| Resultado |
-|--|--|
-"""
+#head="""|Versão| Resultado |
+#|--|--|
+#"""
 
 body_image_carga="[![sei{}-carga-{}](https://github.com/{}/sei-loadtests/actions/workflows/badge-sei{}-carga-{}.yml/badge.svg)](https://github.com/{}/sei-loadtests/actions/workflows/badge-sei{}-carga-{}.yml)"
 
