@@ -1,4 +1,4 @@
-name: seiRelease-5.1.0-carga-postgres
+name: postgres-Release-5.1.0
 
 on:
   push:

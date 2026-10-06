@@ -1,4 +1,4 @@
-name: sei5.0.1-carga-sqlserver
+name: sqlserver-5.0.1
 
 on:
   push:

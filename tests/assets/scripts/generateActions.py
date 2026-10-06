@@ -41,7 +41,7 @@ vers = [
         {'nome': 'Release-5.1.0', 'checkout': 'release/5.1.0'} ]
 
 
-cont_carga = """name: sei{}-carga-{}
+cont_carga = """name: {}-{}
 
 on:
   push:
@@ -74,7 +74,7 @@ for v in vers:
         print(f"Criando arquivo de carga {v['nome']} db: {db}")
 
         with open(f"generated/badge-sei{v['nome']}-carga-{db}.yml", "w", encoding="utf-8") as f:
-            c = cont_carga.format(v['nome'], db, v['checkout'], db)
+            c = cont_carga.format(db, v['nome'], v['checkout'], db)
             f.write(c)
 
 

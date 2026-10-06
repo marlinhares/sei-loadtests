@@ -1,4 +1,4 @@
-name: sei4.1.3-carga-postgres
+name: postgres-4.1.3
 
 on:
   push:

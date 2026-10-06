@@ -1,4 +1,4 @@
-name: sei4.0.12-carga-oracle
+name: oracle-4.0.12
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: seiRelease-5.1.0-carga-oracle
+name: oracle-Release-5.1.0
 
 on:
   push:
