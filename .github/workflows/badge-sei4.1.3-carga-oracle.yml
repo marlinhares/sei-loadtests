@@ -9,5 +9,5 @@ jobs:
     uses: ./.github/workflows/testCarga.yml
     secrets: inherit
     with:
-      sei-version: 4.1.3
+      sei-version: 4.1.3-fix
       db: oracle
