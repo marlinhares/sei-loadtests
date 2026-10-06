@@ -30,8 +30,6 @@ vers = [
         {'nome': '4.0.9', 'checkout': '4.0.9'},
         {'nome': '4.0.12', 'checkout': '4.0.12'},
         {'nome': '4.0.12.15', 'checkout': '4.0.12.15'},
-        {'nome': '4.1.3', 'checkout': '4.1.3-fix'},
-        {'nome': '4.1.4', 'checkout': '4.1.4'},
         {'nome': '4.1.5', 'checkout': '4.1.5'},
         {'nome': '5.0.1', 'checkout': '5.0.1'},
         {'nome': '5.0.2', 'checkout': '5.0.2'},
